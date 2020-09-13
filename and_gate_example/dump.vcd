@@ -1,0 +1,50 @@
+$date
+	Sun Sep 13 13:05:55 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module AND2_test $end
+$var wire 1 ! Q $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module DUT0 $end
+$var wire 1 " A $end
+$var wire 1 # B $end
+$var wire 1 $ Qint $end
+$var wire 1 ! Q $end
+$scope module inverter0 $end
+$var wire 1 ! Yinv $end
+$var wire 1 $ Y $end
+$upscope $end
+$scope module nandgate0 $end
+$var wire 1 " A $end
+$var wire 1 # B $end
+$var wire 1 $ Q $end
+$var wire 1 % Qint $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+1$
+0#
+0"
+0!
+$end
+#5000
+1#
+#10000
+0#
+1"
+#15000
+1!
+0$
+1%
+1#
+#20000

@@ -1,0 +1,77 @@
+#! /usr/local/Cellar/icarus-verilog/10.3/bin/vvp
+:ivl_version "10.3 (stable)" "(v10_3)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7f94ca6099c0 .scope module, "AND2_test" "AND2_test" 2 4;
+ .timescale -9 -12;
+v0x7f94ca61a6b0_0 .var "A", 0 0;
+v0x7f94ca61a780_0 .var "B", 0 0;
+v0x7f94ca61a850_0 .net "Q", 0 0, L_0x7f94ca61aa40;  1 drivers
+S_0x7f94ca609b20 .scope module, "DUT0" "AND2" 2 9, 3 22 0, S_0x7f94ca6099c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "Q"
+v0x7f94ca61a3c0_0 .net "A", 0 0, v0x7f94ca61a6b0_0;  1 drivers
+v0x7f94ca61a460_0 .net "B", 0 0, v0x7f94ca61a780_0;  1 drivers
+v0x7f94ca61a510_0 .net "Q", 0 0, L_0x7f94ca61aa40;  alias, 1 drivers
+v0x7f94ca61a5e0_0 .net "Qint", 0 0, L_0x7f94ca61a990;  1 drivers
+S_0x7f94ca609cd0 .scope module, "inverter0" "INV1" 3 30, 3 13 0, S_0x7f94ca609b20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Y"
+    .port_info 1 /OUTPUT 1 "Yinv"
+L_0x7f94ca61aa40 .functor NOT 1, L_0x7f94ca61a990, C4<0>, C4<0>, C4<0>;
+v0x7f94ca609e80_0 .net "Y", 0 0, L_0x7f94ca61a990;  alias, 1 drivers
+v0x7f94ca619df0_0 .net "Yinv", 0 0, L_0x7f94ca61aa40;  alias, 1 drivers
+S_0x7f94ca619ec0 .scope module, "nandgate0" "NAND2" 3 29, 3 1 0, S_0x7f94ca609b20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "Q"
+L_0x7f94ca61a920 .functor AND 1, v0x7f94ca61a6b0_0, v0x7f94ca61a780_0, C4<1>, C4<1>;
+L_0x7f94ca61a990 .functor NOT 1, L_0x7f94ca61a920, C4<0>, C4<0>, C4<0>;
+v0x7f94ca61a0e0_0 .net "A", 0 0, v0x7f94ca61a6b0_0;  alias, 1 drivers
+v0x7f94ca61a180_0 .net "B", 0 0, v0x7f94ca61a780_0;  alias, 1 drivers
+v0x7f94ca61a220_0 .net "Q", 0 0, L_0x7f94ca61a990;  alias, 1 drivers
+v0x7f94ca61a2f0_0 .net "Qint", 0 0, L_0x7f94ca61a920;  1 drivers
+    .scope S_0x7f94ca6099c0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f94ca61a6b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f94ca61a780_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f94ca61a6b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f94ca61a780_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f94ca61a6b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f94ca61a780_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f94ca61a6b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f94ca61a780_0, 0, 1;
+    %delay 5000, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x7f94ca6099c0;
+T_1 ;
+    %vpi_call 2 20 "$monitor", "%t | A = %b| B = %b| Q = %b", $time, v0x7f94ca61a6b0_0, v0x7f94ca61a780_0, v0x7f94ca61a850_0 {0 0 0};
+    %vpi_call 2 21 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "and.t.v";
+    "./and.v";
