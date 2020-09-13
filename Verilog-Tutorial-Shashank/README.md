@@ -1,0 +1,2 @@
+# Let's Talk Verilog!
+Example code accompanying the Verilog tutorial by Shashank. The slides for this tutorial can be found [here](https://docs.google.com/presentation/d/1perCyblylH-jQuuLyq447a2b7e-O1ION3uDen7Q5Qvk/edit?usp=sharing).
